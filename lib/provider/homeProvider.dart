@@ -1,17 +1,16 @@
 import 'dart:convert';
 import 'package:flutter/cupertino.dart';
 import 'package:http/http.dart' as http;
-import 'package:news_app/view/screen/newsModel.dart';
+import 'package:news_app/model/newsModel.dart';
 
 class HomeProvider extends ChangeNotifier {
   String Data = "gujarat news";
+  Articles? model;
 
   void changeData(String dataLink) {
     Data = dataLink;
     notifyListeners();
   }
-
-  Articles? model;
 
   Future<NewsModel> apiHelper(String data) async {
     String apiLink =

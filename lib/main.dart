@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:news_app/provider/detailProvider.dart';
 import 'package:news_app/provider/homeProvider.dart';
 import 'package:news_app/view/screen/detailScreen.dart';
 import 'package:news_app/view/screen/homeScreen.dart';
@@ -10,9 +11,12 @@ void main() {
   runApp(
     MultiProvider(
       providers: [
-        ChangeNotifierProvider<HomeProvider>(
+        ListenableProvider<HomeProvider>(
           create: (context) => HomeProvider(),
         ),
+        ListenableProvider<DetailProvider>(
+          create: (context) => DetailProvider(),
+        )
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,

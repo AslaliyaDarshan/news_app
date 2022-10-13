@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:news_app/provider/detailProvider.dart';
 import 'package:news_app/provider/homeProvider.dart';
 import 'package:news_app/view/widgetsScreen/size.dart';
 import 'package:provider/provider.dart';
 
-import 'newsModel.dart';
+import '../../model/newsModel.dart';
 
 class DetailScreen extends StatefulWidget {
   const DetailScreen({Key? key}) : super(key: key);
@@ -34,6 +35,7 @@ class _DetailScreenState extends State<DetailScreen> {
           title: const Text("Daily Update News 24/7",
               style: TextStyle(color: Colors.black)),
         ),
+        floatingActionButton: like(),
         backgroundColor: Colors.white70,
         body: ListView(
           padding: const EdgeInsets.symmetric(vertical: 2, horizontal: 10),
@@ -97,6 +99,30 @@ class _DetailScreenState extends State<DetailScreen> {
             ),
             height(20),
           ],
+        ),
+      ),
+    );
+  }
+
+  Widget like() {
+    return Card(
+      color: Colors.white70,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+      child: Container(
+        height: 60,
+        width: 60,
+        child: InkWell(
+          splashColor: Colors.red,
+          borderRadius: BorderRadius.circular(15),
+          onTap: () {
+            Provider.of<DetailProvider>(context, listen: false).like();
+          },
+          child: Provider.of<DetailProvider>(context, listen: true).fevorite
+              ? const Icon(
+                  Icons.favorite_border,
+                  color: Colors.red,
+                )
+              : const Icon(Icons.favorite, color: Colors.red),
         ),
       ),
     );
