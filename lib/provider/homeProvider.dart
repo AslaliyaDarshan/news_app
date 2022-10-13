@@ -4,7 +4,7 @@ import 'package:http/http.dart' as http;
 import 'package:news_app/view/screen/newsModel.dart';
 
 class HomeProvider extends ChangeNotifier {
-  String Data = "politics";
+  String Data = "gujarat news";
 
   void changeData(String dataLink) {
     Data = dataLink;

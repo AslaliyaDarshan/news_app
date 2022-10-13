@@ -31,7 +31,7 @@ class _DetailScreenState extends State<DetailScreen> {
               },
               child: const Icon(Icons.arrow_back_ios_new, color: Colors.black)),
           centerTitle: true,
-          title: const Text("Daily Updated News 24/7",
+          title: const Text("Daily Update News 24/7",
               style: TextStyle(color: Colors.black)),
         ),
         backgroundColor: Colors.white70,

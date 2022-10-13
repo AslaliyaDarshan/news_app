@@ -16,7 +16,7 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   HomeProvider? hTrue;
   HomeProvider? hFalse;
-  TextEditingController txtSearch = TextEditingController(text: "politics");
+  TextEditingController txtSearch = TextEditingController(text: "gujarat news");
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +27,7 @@ class _HomeScreenState extends State<HomeScreen> {
         appBar: AppBar(
           centerTitle: true,
           backgroundColor: Colors.white70,
-          title: const Text("Daily Updated News 24/7",
+          title: const Text("Daily Update News 24/7",
               style: TextStyle(color: Colors.black)),
         ),
         backgroundColor: Colors.white70,
@@ -90,7 +90,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               children: [
                                 Padding(
                                   padding:
-                                      const EdgeInsets.symmetric(vertical: 20),
+                                      const EdgeInsets.symmetric(vertical: 15),
                                   child: ClipRRect(
                                     borderRadius: BorderRadius.circular(20),
                                     child: CachedNetworkImage(
@@ -98,8 +98,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                           "${newsModel.articles![index].urlToImage}",
                                       placeholder: (context, url) => ClipRRect(
                                         borderRadius: BorderRadius.circular(20),
-                                        child: Image.network(
-                                            "https://previews.123rf.com/images/ratoca/ratoca1412/ratoca141200238/34983661-loading-message.jpg"),
+                                        child: Image.asset(
+                                            "assets/spleshImage/load.gif"),
                                       ),
                                     ),
                                   ),
@@ -109,7 +109,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                       const EdgeInsets.symmetric(horizontal: 8),
                                   padding: const EdgeInsets.symmetric(
                                       horizontal: 15, vertical: 7),
-                                  height: 110,
+                                  height:
+                                      MediaQuery.of(context).size.height / 7,
                                   width: double.maxFinite,
                                   decoration: BoxDecoration(
                                       color: Colors.blueGrey,

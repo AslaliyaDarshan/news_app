@@ -19,12 +19,24 @@ class _SpleshScreenState extends State<SpleshScreen> {
       },
     );
     return Scaffold(
-        backgroundColor: Colors.black26,
-        body: Center(
-          child: Image.asset(
-            "assets/spleshImage/splesh.png",
+      backgroundColor: Colors.white70,
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Image.asset(
+            "assets/spleshImage/splesh.gif",
             fit: BoxFit.fill,
           ),
-        ));
+          Text(
+            "  Daily Update          ",
+            style: TextStyle(fontSize: 50),
+          ),
+          Text(
+            "                 News 24/7",
+            style: TextStyle(fontSize: 25, color: Colors.red),
+          ),
+        ],
+      ),
+    );
   }
 }
